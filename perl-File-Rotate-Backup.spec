@@ -5,20 +5,19 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	File
 %define	pnam	Rotate-Backup
-Summary:	File::Rotate::Backup - Make backups of multiple directories and rotate them on unix.
-#Summary(pl):	
+Summary:	File::Rotate::Backup - Make backups of multiple directories and rotate them on Unix
+Summary(pl.UTF-8):	File::Rotate::Backup - tworzenie i rotacja kopii zapasowych wielu katalogów
 Name:		perl-File-Rotate-Backup
 Version:	0.13
 Release:	0.1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	64b978e360764350356a1b8aa09a6655
+URL:		http://search.cpan.org/dist/File-Rotate-Backup/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,14 +29,12 @@ directories you specified in the call to new() to that backup
 directory. Then a tar'd and compressed file is created from that
 directory. By default, bzip2 is used for compression.
 
-This module has only been tested on Linux and Solaris.
-
-The only external programs used are tar and a compression
-program. Copies and deletes are implemented internally.
-
-
-# %description -l pl
-# TODO
+%description -l pl.UTF-8
+Ten moduł tworzy kopie zapasowe i wykonuje ich rotację zgodnie ze
+specyfikacją użytkownika. Tworzy katalog kopii zapasowych w oparciu o
+podany file_prefix i aktualny czas. Następnie kopiuje katalogi podane
+w wywołaniu new() do tego katalogu, po czym tworzy i kompresuje plik
+archiwum tara. Domyślnie do kompresji używany jest bzip2.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
