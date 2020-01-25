@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	File
 %define	pnam	Rotate-Backup
 Summary:	File::Rotate::Backup - Make backups of multiple directories and rotate them on Unix
